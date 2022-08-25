@@ -27,14 +27,13 @@ public class Combination {
     }
 
 
-
     public void generateCombinationIterative(int n, int k) {
         List<List<Integer>> combinations = new ArrayList<>();
 
-        ArrayList<Integer> combination = new ArrayList();
+        Stack<Integer> combination = new Stack<>();
 
         for (int i = 1; i <= k; i++) {
-            combination.add(i);
+            combination.push(i);
         }
 
         combinations.add(new ArrayList<>(combination));
@@ -42,10 +41,10 @@ public class Combination {
         for (int j = 1; j <= k; j++) {
             for (int i = k + 1 - j + 1; i <= n - j + 1; i++) {
                 for (int m = 0; m < j; m++) {
-                    combination.remove(combination.size() - 1);
+                    combination.pop();
                 }
                 for (int m = 0; m < j; m++) {
-                    combination.add(i + m);
+                    combination.push(i + m);
                 }
                 combinations.add(new ArrayList<>(combination));
             }
@@ -57,9 +56,7 @@ public class Combination {
 
     public static void main(String[] args) {
         Combination c = new Combination();
-        System.out.println(c.generateCombinations(7, 4));
+        System.out.println(c.generateCombinations(5, 3));
         c.generateCombinationIterative(5, 3);
-
-
     }
 }
