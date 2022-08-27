@@ -13,6 +13,7 @@ public class GenerateCombination {
                 System.out.print(value + " ");
             }
             System.out.println();
+
             int j = -1;
             for (int i = k - 1; i >= 0; i--) {
                 if (combination[i] <= n - k + i) {
@@ -53,8 +54,8 @@ public class GenerateCombination {
 
     public static void main(String[] args) {
         GenerateCombination g = new GenerateCombination();
-   //     g.generateCombinations(10000000, 350000);
+        g.printAllGeneratedCombination(5, 3);
         System.out.println("------------------------------------");
-       g.printAllGeneratedCombination(5, 3);
+        g.generateCombinations(5, 3);
     }
 }
