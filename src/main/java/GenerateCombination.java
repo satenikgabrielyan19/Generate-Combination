@@ -9,7 +9,10 @@ public class GenerateCombination {
             combination[i] = i + 1;
         }
         while (true) {
-            System.out.println(Arrays.toString(combination));
+            for (int value : combination) {
+                System.out.print(value + " ");
+            }
+            System.out.println();
             int j = -1;
             for (int i = k - 1; i >= 0; i--) {
                 if (combination[i] <= n - k + i) {
@@ -50,8 +53,8 @@ public class GenerateCombination {
 
     public static void main(String[] args) {
         GenerateCombination g = new GenerateCombination();
-        g.generateCombinations(5, 3);
+   //     g.generateCombinations(10000000, 350000);
         System.out.println("------------------------------------");
-        g.printAllGeneratedCombination(5, 3);
+       g.printAllGeneratedCombination(5, 3);
     }
 }
